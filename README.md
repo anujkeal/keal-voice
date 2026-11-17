@@ -45,3 +45,9 @@ keal-voice/
 │   └── Keal_Voice_Colab.ipynb
 └── README.md
 ```
+
+## Colab dependency note
+
+The notebook removes the preinstalled `diffusers` package before installing Qwen3-TTS. Some Colab images include a `diffusers` release that requires `huggingface-hub` 1.x, while the pinned Transformers version used by Qwen3-TTS requires `huggingface-hub` below 1.0. This project does not use Diffusers, so removing it avoids that unrelated package conflict.
+
+If you already ran the older notebook version and the runtime has become inconsistent, use **Runtime → Disconnect and delete runtime**, reopen the latest notebook, and run all cells again. This starts a clean Colab environment; your voice profile and MP3 files remain in Google Drive.
