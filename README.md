@@ -16,6 +16,12 @@ A personal voice-cloning studio: write a script, generate speech using your own 
 
 The notebook loads the Qwen3-TTS 1.7B Base model on the Colab GPU. If your available GPU does not have enough memory, change `MODEL_ID` in the notebook to `Qwen/Qwen3-TTS-12Hz-0.6B-Base`.
 
+## Fine-tune a dedicated voice model
+
+[**Open the Keal Voice fine-tuning notebook in Google Colab**](https://colab.research.google.com/github/anujkeal/keal-voice/blob/main/notebooks/Keal_Voice_Fine_Tuning_Colab.ipynb)
+
+This notebook follows the official Qwen3-TTS single-speaker fine-tuning workflow. Prepare `MyDrive/KealVoice/dataset/audio/` with utterance clips and a `metadata.csv` containing `filename,text`. Aim for 20–30 minutes of clean, accurately transcribed speech as a practical starting dataset; this is not an official minimum. Use a BF16-capable Colab GPU (A100 is the safest choice; compatible L4 may work). The upstream full-model trainer may exceed smaller GPUs' memory. The notebook saves checkpoints under `MyDrive/KealVoice/finetuned_model`.
+
 ## Languages
 
 The notebook offers the ten languages officially listed by Qwen3-TTS: English, Chinese, Japanese, Korean, German, French, Russian, Portuguese, Spanish and Italian. Hindi is not officially supported by this model, so it is not offered as a selectable language.
